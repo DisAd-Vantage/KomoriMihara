@@ -1,0 +1,1785 @@
+@charset "UTF-8";
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+        line-height: 1;                           /* 行間を詰める */
+        -webkit-text-size-adjust: 100%;          /* モバイルの文字サイズ自動調整を無効化 */
+        -webkit-tap-highlight-color: transparent; /* タップ時の青ハイライトを無効化 */
+        }
+
+        /* スマートフォン用のページサイズ */
+        body {
+            background-color: rgb(255, 255, 255);
+            background-image: none;
+
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        ::after, ::before { /* 疑似要素に対して */
+            -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        img {
+            border-style: none;
+            vertical-align: bottom; /* 画像のサイズ調整にbottomを参照する */
+        }
+
+        /* ヘッダー */
+        #Header {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            background-color: rgb(255, 255, 255, 0.8);
+            display: flex;
+
+            z-index: 1000;
+        }
+        /* ヘッダーの疑似要素 */
+        #Header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            height: 3vw;
+            background-color: rgb(255, 186, 186);
+        }
+        #Header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            height: 4vw;
+            background-color: rgb(87, 0, 0);
+        }
+
+        /* ブログタイトル */
+        .BlogTitle {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            height: 19vw;
+            padding-top: 6vw;
+            padding-bottom: 3vw;
+        
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        /* ログイン中の状態が表示される */
+        .username {
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 30vw;
+            margin-top: 6vw;
+            margin-bottom: 3vw;
+
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+            font-size: 12px;
+        }
+        /* ポータルへのログイン */
+        #Portal {
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 15vw;
+            margin-top: 6vw;
+            margin-bottom: 3vw;
+            margin-right:  3vw;
+
+            color: rgb(0, 0, 0);
+            border: 1px solid rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+            font-size: 12px;
+
+            transition: background-color 0.3s ease;
+
+            cursor: pointer;
+        }
+        #Portal:hover {
+            background-color: rgb(110, 110, 110);
+        }
+
+        #Contents { /* ページコンテンツ */
+            width: 100vw;
+            height: auto;
+            margin-top: 19vw;
+
+            font-family: "Meiryo",sans-serif;
+            color: rgba(0, 0, 0, 1);
+            background-color: rgba(255, 255, 255);
+            border-top: 3vw solid rgb(82, 0, 0);
+        }
+
+        #Toplogo { /* トップロゴ */
+            position: relative;
+            display: block;
+
+            background-image: url("../Img/TopBackground_1.png");
+            background-size: cover;
+            background-position: 0%;
+            background-repeat: no-repeat;
+
+            animation: ToplogoSlide 30s linear infinite;
+        }
+        @keyframes ToplogoSlide{
+            0%{
+                background-image: url("../Img/TopBackground_1.png");
+                background-position: 0%;
+            }
+            14%{
+                background-image: url("../Img/TopBackground_1.png");
+                background-position: 100%;
+            }
+            15%{
+                background-image: url("../Img/TopBackground_2.png");
+                background-position: 0%;
+            }
+            29%{
+                background-image: url("../Img/TopBackground_2.png");
+                background-position: 100%;
+            }
+            30%{
+                background-image: url("../Img/TopBackground_3.png");
+                background-position: 0%;
+            }
+            44%{
+                background-image: url("../Img/TopBackground_3.png");
+                background-position: 100%;
+            }
+            45%{
+                background-image: url("../Img/TopBackground_4.png");
+                background-position: 0%;
+            }
+            59%{
+                background-image: url("../Img/TopBackground_4.png");
+                background-position: 100%;
+            }
+            60%{
+                background-image: url("../Img/TopBackground_5.png");
+                background-position: 0%;
+            }
+            74%{
+                background-image: url("../Img/TopBackground_5.png");
+                background-position: 100%;
+            }
+            75%{
+                background-image: url("../Img/TopBackground_6.png");
+                background-position: 0%;
+            }
+            89%{
+                background-image: url("../Img/TopBackground_6.png");
+                background-position: 100%;
+            }
+            90%{
+                background-image: url("../Img/TopBackground_7.png");
+                background-position: 0%;
+            }
+            99%{
+                background-image: url("../Img/TopBackground_7.png");
+                background-position: 100%;
+            }
+            100%{
+                background-image: url("../Img/TopBackground_1.png");
+                background-position: 0%;
+            }
+        }
+
+        .BlogLogoLarge {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            padding-top: 35vw;
+            padding-bottom: 35vw;
+        }
+
+        #SCROLLTAB { /* SCROLLTAB */
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100vw;
+
+            background-color: rgba(255, 255, 255);
+        }
+        .Policy {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100vw;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        /* キャプション */
+        .Caption {
+            position: relative;
+            top: 0;        
+            width: 100vw;
+            height: 12vw;
+            margin-top: 3vw;
+            padding-top: 3vw;
+            padding-bottom: 3vw;
+
+            text-align: center;
+
+            font-size: 32px;
+            color: rgb(0, 0, 0);
+            border-top: 1px solid rgb(0, 0, 0);
+            border-bottom: 1px solid rgb(0, 0, 0);
+        }
+        /* サブキャプション */
+        .SubCaption {
+            position: relative;
+            top: 0;        
+            width: 55vw;
+            height: 10vw;
+            margin-top: 3vw;
+            margin-left: 3vw;
+            padding-top: 3vw;
+            padding-left: 5vw;
+
+            text-align: left;
+
+            font-size: 4vw;
+            color: rgb(0, 0, 0);
+            border-bottom: 2px solid rgb(129, 32, 32);
+        }
+        /* サブサブキャプション */
+        .SubSubCaption {
+            position: relative;
+            top: 0;        
+            width: 55vw;
+            height: 7vw;
+            margin-top: 3vw;
+            margin-left: 3vw;
+            padding-top: 2vw;
+            padding-left: 2vw;
+
+            text-align: left;
+
+            font-size: 3.5vw;
+            color: rgb(0, 0, 0);
+            border-left: 5px solid rgb(223, 137, 137);
+        }
+        /* 参拝手順 */
+        .PrayMethod {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-left: 5vw;
+            width: 90vw;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+            z-index: 1;
+        }
+        /* 参拝画像 */
+        .PrayImage {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 5vw;
+            margin-left: 20vw;
+            width: 60vw;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+            z-index: 1;
+        }
+        .ToPray {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 3vw;
+            margin-left: 20vw;
+            margin-bottom: 5vw;
+            width: 60vw;
+            height: 10vw;
+
+            border: 1px solid rgb(92, 92, 92);
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+
+            display: flex;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+
+            background-image: url("../Img/ToPrayBackground.png");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            z-index: 10;
+        }
+
+        /* ニュース */
+        #News {
+            position: relative;
+            width: 100vw;
+            padding-top: 3vw;
+            
+            background-color: rgb(255, 255, 255);
+            /* 子要素を横に並べる */
+            /* 子要素を縦並びに */
+            display: flex;
+            flex-direction: column;
+        }
+        #Pickup { /* ピックアップ */
+            position: relative;
+            width: 100vw;
+            padding-top: 3vw;
+
+            background-color: rgb(255, 255, 255);
+            /* 子要素を横に並べる */
+            /* 子要素を縦並びに */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* メニュータブ */
+        .Tub {
+            position: relative;
+            width: 100vw;
+            height: 115vw;
+
+            margin-top: 3vw;
+            margin-bottom: 3vw;
+
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* 黒っぽい影 */
+
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* サムネイル設定 */
+        .Thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60vw;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* ページの概要 */
+        .abstract {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100vw;
+            height: 55vw;
+
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255);
+
+            display: block;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+            font-size: 16px;
+
+            background-image: url("../Img/AbstractBackground.png");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            z-index: 2;
+        }
+        .Title {
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5vw;
+            margin-top: 5vw;
+
+            color: rgb(0, 0, 0);
+
+            display: flex;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+            font-size: 24px;
+
+            z-index: 2;
+        }
+        .LinkLogo_1 {
+            position: absolute;
+            top: 3vw;
+            right: 10vw;
+            width: 40px;
+            height: 40px;
+            
+            z-index: 2;
+        }
+        .abstractText {
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            padding: 8vw;
+
+            color: rgb(0, 0, 0, 0.7);
+
+            display: flex;
+            text-align: center;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+            font-size: 12px;
+
+            z-index: 2;
+        }
+        
+        /* ニュースメニュー */
+        .NewsMenu {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 5vw;
+            margin-left: 5vw;
+            width: 90vw;
+
+            list-style-type: none;
+            display: flex;
+        }
+        .NewsMenu li {
+            position: relative;
+            width: 28vw;
+            height: 8vw;
+            margin-right: 2vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgb(212, 175, 175);
+        }
+        /* ニュース一覧表示 */
+        .NewsContents {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 5vw;
+            margin-left: 5vw;
+            width: 90vw;
+
+            list-style-type: none;
+        }
+        .NewsContents li {
+            position: relative;
+            width: 88vw;
+            height: 24vw;
+            margin-right: 2vw;
+            margin-top: 2vw;
+
+            border-bottom: 1px solid rgb(78, 50, 50);
+        }
+        .NewsDate {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 32vw;
+            height: 5vw;
+            margin-right: 2vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+        .NewsClass {
+            position: absolute;
+            top: 0;
+            left: 35vw;
+            width: 32vw;
+            height: 5vw;
+            margin-right: 2vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgb(61, 0, 0);
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+        }
+        .NewsText {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 88vw;
+            height: 19vw;
+            margin-right: 2vw;
+            padding-left: 3vw;
+
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        /* 12月表示 */
+        .MonthsList {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 5vw;
+            margin-left: 5vw;
+            width: 90vw;
+
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(6, auto);
+            grid-template-rows: repeat(2, auto);
+            gap: 0;
+        }
+        .Months {
+            position: relative;
+            top: 0;
+            margin-top: 1vw;
+            width: 14vw;
+            height: 8vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgb(238, 168, 168);
+            border: 1px solid rgb(138, 63, 63);
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+        }
+        .MonthsON {
+            position: relative;
+            top: 0;
+            margin-top: 1vw;
+            width: 14vw;
+            height: 8vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgb(43, 0, 0);
+            border: 1px solid rgb(138, 63, 63);
+            color: rgb(255, 255, 255);
+            font-size: 12px;
+
+            cursor: pointer;
+
+            transition: background-color 0.3s ease;
+        }
+
+        /* 神事リスト用 */
+        .RitualContents {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 5vw;
+            margin-left: 5vw;
+            width: 90vw;
+
+            list-style-type: none;
+        }
+        .RitualContents li {
+            position: relative;
+            width: 88vw;
+            margin-right: 2vw;
+            margin-top: 2vw;
+
+            border-bottom: 1px dashed rgb(78, 50, 50);
+        }
+        .RitualExplaine {
+            position: relative;
+            top: 0;
+            padding: 3vw;
+
+            width: 88vw;
+            height: auto;
+
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        /* 表示のオンオフ */
+        .OFF {
+            display: none;
+        }
+        .ON {
+            display: block;
+        }
+
+        /* お社用 */
+        .ShrineMap {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 15vw;
+            margin-bottom: 15vw;
+            width: 100vw;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+            z-index: 1;
+        }
+        .ShrineImage {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 5vw;
+            margin-left: 5vw;
+            margin-bottom: 5vw;
+            width: 90vw;
+            height: 90vw;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+            z-index: 1;
+        }
+        .ShrineTab {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 0;
+            width: 100vw;
+
+            list-style-type: none;
+        }
+        .ShrineTab li {
+            position: relative;
+            width: 100vw;
+            height: 10vw;
+
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            border-bottom: 1px dashed rgb(0, 0, 0);
+        }
+        .ShrineNumber {
+            position: relative;
+            width: 6vw;
+            height: 6vw;
+            margin: 2vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 3vw;
+            border-radius: 3vw;
+            color: rgb(255, 255, 255);
+            background-color: rgb(53, 0, 0);
+        }
+
+        /* ここから先ログイン画面専用 */
+        /* ログインフォーム */
+        #loginForm {
+            position: relative;
+            margin-top: 5vw;
+            width: 100vw;
+            height: 50vw;
+
+            background-color: rgba(255, 255, 255);
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 5px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input { /* インプットフォーム */
+            position: relative;
+            margin-top: 2vw;
+            width: 70vw;
+            height: 5vw;
+
+            background-color: rgba(255, 255, 255);
+            border: 1px solid rgb(116, 116, 116);
+
+            cursor: pointer;
+        }
+        button {
+            position: relative;
+            margin-top: 2vw;
+            width: 17vw;
+            height: 7vw;
+
+            color: rgb(255, 255, 255);
+            background-color: rgb(54, 0, 0);
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        /* メッセージボックス */
+        #errorMessageBox {
+            position: fixed;
+            top: 0;
+            margin-top: 20vw;
+            width: 100vw;
+            height: 25vw;
+
+            background-color: rgba(48, 0, 0, 0.8);
+            border: 1px solid rgb(255, 255, 255);
+            
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #errorMessage {
+            position: relative;
+            top: 0;
+            right: 0;
+            
+            margin-top: 2vw;
+            width: 100vw;
+            height: 5vw;
+
+            font-size: 26px;
+
+            color: rgb(255, 255, 255);
+
+            display: flex;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+        }
+        #errorMessageText {
+            position: relative;
+            top: 0;
+            right: 0;
+            
+            margin-top: 0vw;
+            width: 80vw;
+            height: 15vw;
+
+            font-size: 18px;
+
+            color: rgb(255, 255, 255);
+
+            display: flex;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+        }        
+        
+        #Menu {
+            position: relative;
+            width: 8vw;
+            height: 4vh;
+
+            top: 0vh;
+            right: 0%;
+            background-color: rgba(255, 255, 255, 0);
+            text-align: left; /* 横方向の中央 */
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+        .Menu span {
+            display: block;
+            width: 6vw;
+            height: 4px;
+            margin-top: 0.6vh;
+            margin-left: 1vw;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2px;
+        }
+
+        /* メニュータブ */
+        #MenuNav {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 70vw;
+            height: 100vh;
+            transform: scaleX(0%);
+            transform-origin: right;
+            transition: transform 1s ease;
+        }
+        .Nav {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 70vw;
+            height: 100vh;
+            color: rgb(255, 255, 255);
+        }
+        .Nav.active {
+            transform: scaleX(100%);
+        }
+
+        /* ここからピックアップページ */
+        /* ページの見出し */
+        .Pagehead {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 70vw;
+        }
+        .PageCaption1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: -3vw;
+            width: 100vw;
+            height: 70vw;
+
+            color: rgb(255, 255, 255);
+            font-size: 32px;
+
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 2;
+        }
+        .PageCaption2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 3vw;
+            width: 100vw;
+            height: 70vw;
+
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 2;
+        }
+        .CaptionImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 70vw;
+
+            object-fit: cover;
+            object-position: 50% 10%;
+
+            z-index: 1;
+        }
+        /* 社長画像用 */
+        .NormalImage {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 40vw;
+
+            object-fit: cover;
+            object-position: 50% 10%;
+        }
+        /* 理念画像 */
+        .PolicyImage {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+
+            object-fit: contain;
+            object-position: 50% 15%;
+        }
+        /* 説明文 */
+        .Paragraph {
+            position: relative;
+            top: 0;
+            padding: 5vw;
+
+            width: 100vw;
+            height: auto;
+
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0);
+        }
+        /* サブリンク */
+        #Sublink {
+            position: relative;
+            top: 0vh;
+            
+            /* 子要素を横に並べる */
+            /* 子要素を縦並びに */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            width: 100vw;
+            height: auto;
+        }
+        .Tublink {
+            position: relative;
+            width: 70vw;
+            height: 5vw;
+            margin-top: 0.5vh;
+
+            color: rgb(0, 0, 0);
+            border: 1px solid rgb(0, 0, 0);
+
+            display: flex;
+            justify-content: center; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+
+            font-size: 16px; 
+
+            overflow: hidden;
+            cursor: pointer;
+
+            z-index: 2;
+        }
+        .Tublink::after {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(255, 0, 0, 0.2);
+
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+        .Tublink:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* 見出し */
+        .heading {
+            position: relative;
+            top: 0;
+            margin: 3vw;
+            padding-left: 1vw;
+            width: 90vw;
+            height: 5vw;
+
+            display: flex;
+            justify-content: left; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            border-left: 5px solid rgb(0, 0, 0);
+        }
+        /* 表 */
+        .grid {
+            position: relative;
+            top: 0;
+            width: 100vw;
+            height: auto;
+            padding-left: 10vw;
+
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 0;
+        }
+        .item {
+            border-bottom: 1px solid rgb(0, 0, 0);
+            width: 15vw;
+            height: 5vw;
+
+            color: rgb(0, 0, 0);
+            font-size: 10px;
+
+            display: flex;
+            justify-content: right; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+        }
+        .explanation {
+            border-bottom: 1px solid rgb(0, 0, 0);
+            width: 55vw;
+            height: 5vw;
+
+            color: rgb(0, 0, 0);
+            font-size: 10px;
+
+            display: flex;
+            justify-content: left; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+        }
+
+        /* 会社沿革 */
+        .gridHistory {
+            position: relative;
+            top: 0;
+            padding-left: 10vw;
+
+            width: 100vw;
+
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 0;
+        }
+        .year {
+            position: relative;
+            width: 18vw;
+            height: auto;
+            margin-right: 2vw;
+            padding-left: 1vw;
+
+            border-left: 0.5vw solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+
+            text-align: left;
+        }
+        .year::after {
+            content: "";
+            position: absolute;
+            top: 2vw;
+            left: -1.25vw;
+            width: 2vw;
+            height: 2vw;
+
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+
+            text-align: center;
+        }
+        .event {
+            width: 65vw;
+            height: 15vw;
+            padding: 1vw;
+            margin: 1vw;
+
+            border-radius: 3vw;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(0, 0, 0);
+            font-size: 10px;
+
+            display: flex;
+            justify-content: center; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+
+            text-align: center;
+        }
+        .Subevent {
+            width: 65vw;
+            height: 5vw;
+            padding: 1vw;
+            margin: 1vw;
+
+            color: rgb(0, 0, 0);
+            font-size: 10px;
+
+            display: flex;
+            justify-content: left; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+
+            text-align: left;
+        }
+
+        /* 札付ける用 */
+        .PlateSet {
+            position: relative;
+            top: 0;
+            left: 5vw;
+            margin-top: 1vh;
+
+            width: 80vw;
+            height: auto;
+
+            font-size: 12px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0);
+
+            display: flex;
+        }
+        
+
+        /* マイページ用 */
+        .Notice {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 80vw;
+            margin-top: 0vh;
+            background-color: rgba(73, 73, 73, 0);
+
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
+
+        /* チャット画面 */
+        #Chatframe {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-left: 0vw;
+            margin-top: 0vh;
+            margin-bottom: 0vh;
+
+            width: 74vw;
+            height: auto;
+
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .chatTitle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-left: 0vw;
+            margin-top: 0vh;
+
+            width: 100vw;
+            height: 6vh;
+
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(85, 85, 85, 0.9);
+            display: flex;
+            justify-content: left; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+            
+            z-index: 100;
+        }
+        .chatlogomenu {
+            position: fixed;
+            top: 0;
+            right: 0;
+
+            width: auto;
+            height: 6vh;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            z-index: 100;
+        }
+        .chatblank {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-left: 0vw;
+            margin-top: 0vh;
+
+            width: 100vw;
+            height: 6vh;
+        }
+
+        /* チャット文 */
+        .chatdate {
+            position: relative;
+            margin-top: 1vh;
+            padding: 3px;
+            width: 18vw;
+
+            color: rgb(255, 255, 255);
+            font-size: 10px;
+            display: flex;
+            justify-content: center; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+
+            border-radius: 5px 5px 5px 5px;
+            background-color: rgb(49, 49, 49);
+        }
+        .yourimg {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-right: 88vw;
+            margin-top: 1vh;
+            height: 7vh;
+
+            border-radius: 50%;
+            
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        .yourchat {
+            position: relative;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            margin-left: 3vw;
+            padding: 1vw;
+            width: 85vw;
+
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+            text-align: left;
+
+            border-radius: 5px 5px 5px 5px;
+            background-color: rgb(206, 206, 206);
+            z-index: 10;
+        }
+        .yourchat::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: -6vw;
+
+            width: 7vw;
+            height: 10px;
+
+            background-color: rgb(206, 206, 206);
+            clip-path: polygon(100% 40%, 40% 0%, 90% 100%);
+            z-index: 0;
+        }
+        .mychat {
+            position: relative;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            margin-right: 3vw;
+            padding: 1vw;
+            width: 85vw;
+
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+            text-align: right;
+
+            border-radius: 5px 5px 5px 5px;
+            background-color: rgb(121, 184, 118);
+            z-index: 10;
+        }
+        .mychat::after {
+            content: "";
+            position: absolute;
+            bottom: 20%;
+            right: -6vw;
+
+            width: 7vw;
+            height: 10px;
+
+            background-color: rgb(121, 184, 118);
+            clip-path: polygon(0% 0%, 60% 0%, 0% 100%);
+            z-index: 0;
+        }
+
+        /* チャット画面下部 */
+        .chatbox {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 5vw;
+
+            color: rgba(0, 0, 0, 0.5);
+
+            background-color: rgb(110, 110, 110);
+            display: flex;
+            z-index: 100;
+        }
+        .chatbox::after {
+            content: "Aa";
+            position: absolute;
+            top: 3px;
+            left: 18vw;
+            padding-left: 1vw;
+            width: 75vw;
+            height: 4vw;
+
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+            
+            display: flex;
+            justify-content: left; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+
+            background-color: rgb(206, 206, 206);
+            border-radius: 5px 5px 5px 5px;
+            z-index: 100;
+        }
+        .chatitems {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: auto;
+            height: 5vw;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            z-index: 100;
+        }
+
+        /* 画面の状態 */
+        #UserDisplay {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: auto;
+
+            margin-top: 0vh;
+            background-color: rgba(255, 255, 255, 0.1);
+
+            display: flex;
+        }
+
+        /* 左に表示されるメニュータブ */
+        #Leftmenu {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 18vw;
+            height: 80vh;
+
+            margin-top: 0vh;
+            background-color: rgb(210, 217, 224);
+            border-right: 2px solid rgb(255, 255, 255);
+
+            display: flex;
+            flex-direction: column;
+        }
+        .MenuTitle {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 0vh;
+            padding-left: 1vw;
+
+            width: 17vw;
+            height: 3vh;
+            color: rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.6);
+            font-size: 18px;
+
+            display: flex;
+            justify-content: left; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+        }
+        .chatyourimg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 0.1vw;
+            margin-top: 1vh;
+            height: 3vh;
+
+            border-radius: 50%;
+            
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        .Menupart {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 1vh;
+
+            width: 18vw;
+            height: 5vh;
+            font-size: 16px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: right; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+
+            cursor: pointer;
+        }
+        .Menupart::after {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(255, 255, 255, 0);
+
+            transition: background-color 0.5s ease;
+            z-index: 3;
+        }
+        .Menupart:hover::after {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .chatid {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 0vh;
+
+            width: 100%;
+            height: auto;
+            font-size: 12px;
+
+            display: flex;
+            justify-content: right; /* 横中央 */
+            align-items: center;     /* 縦中央 */
+        }
+
+        #Marmot {
+            width: 60vw;
+            height: 2vh;
+
+            border-radius: 8px;
+        }
+        #Seek {
+            width: 10vw;
+            height: 3vh;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* 社員ページでのお知らせ系 */
+        .portText {
+            margin-top: 3vh;
+            margin-left: 2vw;
+            color: rgb(255, 255, 255);
+
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+
+            overflow-wrap: break-word; /* 自動改行 */
+        }
+
+        /* 将棋ページ用 */
+                /* 将棋盤の設定 */
+        .board {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+            background-image:
+                        linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px); 
+
+            /* 画像の設定 */
+            background-size: 70px 69.5px;  
+            grid-template-columns: repeat(25, 4vw);
+            grid-template-rows: repeat(25, 4vw);
+
+            width: 100vw; /* 70px × 9 + 余白 */
+            height: auto; /* 69.5px × 9 + 余白 */
+            border: 3px solid rgb(255, 255, 255);
+            position: absolute;
+        }
+        .cell {
+            color: rgb(255, 255, 255);
+            width: 4vw;
+            height: 4vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4vw;
+            font-weight: bold;
+            cursor: pointer;
+            border: 2px solid black transparent;
+            margin-left: 3.25px;
+            margin-top: 3px;
+
+            /* 素では移動しない */
+            transform-origin: center;
+            transform: translate(0px,0px) scale(1);
+            transition: transform 0.3s ease-out;
+            position: static;    
+        }
+        /* 選択した文字の強調 */
+        .selected { 
+            animation: selected 1s infinite ease-in-out; 
+        }
+        @keyframes selected { 
+            0% {
+                transform: scale(1);
+            }
+            50% { 
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* ハイライトの設定 */
+        .highlight {
+            position: relative;
+            animation: highlightBlink 0.3s infinite ease-in-out;
+        }      
+        /* 選択したところをハイライトするための設定 */
+        @keyframes highlightBlink {
+            0% { 
+                background: rgba(230, 255, 170, 0);
+            }
+            100% { 
+                background: rgba(230, 255, 170, 0.1);
+            }
+        }
+
+        /* フッター */
+        #Footer {
+            position: relative;
+            margin-top: 5vw;
+            top: 0;
+            
+            /* 子要素を縦並びに */
+            display: inline-block;
+            justify-content: center; /* 横方向の中央 */
+            align-items: center;
+            text-align: center; /* 横方向の中央 */
+
+            width: 100vw;
+            height: 110vw;
+
+            color: rgba(255, 255, 255, 1);
+            background-image: url("../Img/FooterBackground.png");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        /* ページトップ */
+        .PageTop {
+            position: relative;
+            top: 0;
+            margin-top: 25vw;
+            width: 100vw;
+            height: 70vw;
+
+            background-image: url("../Img/ShrineLogo.png");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        /* 注意書き */
+        .Note {
+            position: relative;
+            top: 0;
+
+            width: 100vw;
+            height: 10vw;
+            color: rgb(255, 255, 255);
+            font-size: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-top: 3px solid rgb(255, 255, 255);
+            background-color: rgb(37, 0, 0);
+        }
+
+        /* コピーライトの表記 */
+        .CopyRight {
+            position: relative;
+            top: 0;
+
+            width: 100vw;
+            height: 5vw;
+            color: rgb(255, 255, 255);
+            font-size: 11px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-top: 1px solid rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+        }
+
+        /* 開閉可能なメニュータブ */
+        #Menubtn {
+            position: fixed;
+            width: 10vw;
+            height: 10vw;
+            margin-top: -13vw;
+            margin-left: 88vw;
+
+            background-color: rgb(0, 0, 0, 0.7);
+
+            cursor: pointer;
+
+            z-index: 3000;
+        }
+        /* メニュータブ閉じている */
+        .MenubtnOFF span {
+            position: absolute;
+            display: inline-block;
+            width: 8vw;
+            height: 0.5vw;
+
+            background-color: rgba(255, 255, 255);
+            top: 4.5vw;
+            left: 1vw;
+        }
+        .MenubtnOFF span::before, .MenubtnOFF span::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 8vw;
+            height: 0.5vw;
+
+            background-color: rgba(255, 255, 255);
+            transition: transform 0.3s ease-out;
+        }
+        .MenubtnOFF span::before {
+            top: -2vw;
+        }
+        .MenubtnOFF span::after {
+            top: 2vw;
+        }
+
+        /* メニュータブ開いている */
+        .MenubtnON span {
+            position: absolute;
+            display: inline-block;
+            width: 8vw;
+            height: 0.5vw;
+
+            background-color: rgba(255, 255, 255, 0);
+            top: 4.5vw;
+            left: 1vw;
+        }
+        .MenubtnON span::before, .MenubtnON span::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 8vw;
+            height: 0.5vw;
+
+            background-color: rgba(255, 255, 255);
+            transition: transform 0.3s ease-out;
+        }
+        .MenubtnON span::before {
+            transform: rotate(225deg);
+            top: 0vw;
+        }
+        .MenubtnON span::after {
+            transform: rotate(135deg);
+            top: 0vw;
+        }
+
+        
+        #MenuTabBar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding-top: 19vw;
+            height: 100vh;
+
+            background-color: rgba(255, 255, 255, 0.9);  
+            z-index: 2000;
+
+            overflow: hidden;
+
+            transition: width 0.3s ease-out;
+        }
+        .MenuTabBarOFF {
+            width: 0vw; /* 初期は閉じている。 */
+        }
+        .MenuTabBarON {
+            width: 100vw; /* 初期は閉じている。 */
+        }
+
+        .MenuTabInfo {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-left: 10vw;
+            margin-bottom: 2vw;
+            width: 80vw;
+            height: 15vw;
+
+            border: 1px solid rgb(168, 168, 168);
+            object-fit: cover;
+            object-position: 50% 10%;
+        }
+        .MenuTab {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 0;
+            width: 100vw;
+
+            list-style-type: none;
+        }
+        .MenuTab li {
+            position: relative;
+            width: 100vw;
+            height: 10vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .MenuTab li::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-bottom: 1px dashed rgb(0, 0, 0);
+            pointer-events: none;
+        }
