@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="icon" href="../Img/Logo.png" type="image/png">
+    <link rel="icon" href="../../Img/Logo.png" type="image/png">
     <link rel="stylesheet" href="../../css/Iphonestyle.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>社 | 隠御原神社</title>
+    <title>風走神 | 隠御原神社</title>
 </head>
 <body>
 <div id="Header">
@@ -18,7 +18,7 @@
     </div>
 
     <div id="MenuTabBar" class="MenuTabBarOFF">
-        <a href="../../Pickup/Rouhikaisai.html"><img src="../../Img/MenuTabInfo_1.png" alt="" class="MenuTabInfo"></a>
+        <a href="../../Pickup/History/Rouhikaisai.html"><img src="../../Img/MenuTabInfo_1.png" alt="" class="MenuTabInfo"></a>
         <a href="../../Pickup/Notice.html"><img src="../../Img/MenuTabInfo_2.png" alt="" class="MenuTabInfo"></a>
         <ul class="MenuTab">
             <li>
@@ -40,18 +40,18 @@
                 <a href="../../Pickup/PrecinctMap.html">境内マップ</a>
             </li>
         </ul>
-        <a href=""><img src="../../Img/MenuTabInfo_3.png" alt="" class="MenuTabInfo"></a>
-        <a href=""><img src="../../Img/MenuTabInfo_4.png" alt="" class="MenuTabInfo"></a>
+        <a href="../../Tokobarai/index.html"><img src="../../Img/MenuTabInfo_3.png" alt="" class="MenuTabInfo"></a>
+        <a href="../../KFO/index.html"><img src="../../Img/MenuTabInfo_4.png" alt="" class="MenuTabInfo"></a>
     </div>
     
-    <div id="Contents">
-        <div class="SubCaption">社</div>
-        <img src="../../Img/Shrine1.png" alt="" class="ShrineImage">
-
-        <div class="SubSubCaption">社は〇〇！</div>
+    <div id="Contents" class="ContensFIVE">
+        <div class="Caption">風渡社</div>
+        <div class="SubCaption">ご祭神</div>
+        <div class="DeityName"><span id="FIVE">風走神</span></div>
+        <div class="DeityNameEng">Kazehashiri no Kami</div>
 
         <div class="Paragraph">
-            隠御原神社の創祀は、現存する資料には残っておらず、いつからこの地で信仰されてきたのか、今でも調査が進められているほどに解明されていません。一説によると、1185年（文治元年）前後とされています。<br>
+            昔、藤原氏の少年が宇治の川で溺れていたところ、白装束の少女が通りかかった。<br>
         </div>
     </div>
 
@@ -62,5 +62,9 @@
     </div>
 
     <script src="../../js/script.js"></script>
+    <script>
+        const checkFIVE = localStorage.getItem("Kazehashiri");
+    </script>
+    <script src="../../js/FIVE.js"></script>
 </body>
 </html>

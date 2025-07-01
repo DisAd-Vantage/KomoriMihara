@@ -164,6 +164,45 @@
             <div class="ToPray">お賽銭箱</div>
         </a>
 
+        <form id="PrayForm">
+            <h1 class="Caption">ご祈祷はこちら</h1>
+            <label for="Deity">ご祈祷するお社・ご祭神をお選びください。</label>
+            <select name="Deity" id="SendTo" required>
+                <option value="" selected disabled>選択してください。</option>
+                <optgroup label="本殿">
+                    <option value="1">本殿</option>
+                </optgroup>
+
+                <optgroup label="摂社">
+                    <option value="2">荒御魂社</option>
+                    <option value="3">静御魂社</option>
+                    <option value="4">縺ｺ縺｡縺ｦ蟆代ｻ</option>
+                    <option value="5">磐根社</option>
+                    <option value="6">水脈社</option>
+                    <option value="7">遥野社</option>
+                </optgroup>
+
+                <optgroup label="末社">
+                    <option value="8">月影社</option>
+                    <option value="9">霧結社</option>
+                    <option value="10">篝火社</option>
+                    <option value="11">穂積社</option>
+                    <option value="12">御影社</option>
+                    <option value="13">八咫烏社</option>
+                    <option value="14">神籬社</option>
+                    <option value="15">風渡社</option>
+                    <option value="16">白妙社</option>
+                    <option value="17">露結社</option>
+                    <option value="18">霞守社</option>
+                </optgroup>
+
+            </select>
+            <input type="text" id="PrayWord" placeholder="入力してください。" required>
+            <button type="submit" id="PrayBtn">祈祷する</button>
+        </form>
+
+        <div id="NormalActionText">ご祈祷をご祭神に送信しました。</div>
+
         <img src="../Img/Pray_7.png" alt="" class="PrayMethod">
         <img src="" alt="" class="PrayImage">
         <div class="Paragraph">
@@ -174,7 +213,6 @@
         <a href="PrayMethod/Pray1.html">
             <div class="ToPray">社務所</div>
         </a>
-
     </div>
 
 
@@ -186,5 +224,6 @@
     </div>
 
     <script src="../js/script.js"></script>
+    <script src="../js/PrayWord.js"></script>
 </body>
 </html>

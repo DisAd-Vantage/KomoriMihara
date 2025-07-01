@@ -1,0 +1,9 @@
+@charset "UTF-8";
+        /* スマートフォン用のページサイズ */
+        * {
+            color: rgb(170, 170, 170);
+        }
+
+        body {
+            background-color: rgb(0, 14, 39);
+        }

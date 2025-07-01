@@ -5,7 +5,7 @@
         }
 
         html {
-        line-height: 1;                           /* 行間を詰める */
+        line-height: 1.5;                           /* 行間を詰める */
         -webkit-text-size-adjust: 100%;          /* モバイルの文字サイズ自動調整を無効化 */
         -webkit-tap-highlight-color: transparent; /* タップ時の青ハイライトを無効化 */
         }
@@ -16,6 +16,7 @@
             background-image: none;
 
             margin: 0;
+            transition: background-color 0.3s ease;
         }
 
         a {
@@ -42,6 +43,7 @@
             display: flex;
 
             z-index: 1000;
+            box-shadow: 0px 1vw 25px rgba(65, 0, 0, 0.3); /* 黒っぽい影 */
         }
         /* ヘッダーの疑似要素 */
         #Header::after {
@@ -124,8 +126,7 @@
 
             font-family: "Meiryo",sans-serif;
             color: rgba(0, 0, 0, 1);
-            background-color: rgba(255, 255, 255);
-            border-top: 3vw solid rgb(82, 0, 0);
+            border-top: 3vw solid rgb(255, 255, 255);
         }
 
         #Toplogo { /* トップロゴ */
@@ -234,8 +235,9 @@
         .Caption {
             position: relative;
             top: 0;        
-            width: 100vw;
+            width: 90vw;
             height: 12vw;
+            margin-left: 5vw;
             margin-top: 3vw;
             padding-top: 3vw;
             padding-bottom: 3vw;
@@ -243,9 +245,7 @@
             text-align: center;
 
             font-size: 32px;
-            color: rgb(0, 0, 0);
-            border-top: 1px solid rgb(0, 0, 0);
-            border-bottom: 1px solid rgb(0, 0, 0);
+            border-bottom: 1vw solid rgb(58, 0, 0);
         }
         /* サブキャプション */
         .SubCaption {
@@ -261,7 +261,6 @@
             text-align: left;
 
             font-size: 4vw;
-            color: rgb(0, 0, 0);
             border-bottom: 2px solid rgb(129, 32, 32);
         }
         /* サブサブキャプション */
@@ -278,7 +277,6 @@
             text-align: left;
 
             font-size: 3.5vw;
-            color: rgb(0, 0, 0);
             border-left: 5px solid rgb(223, 137, 137);
         }
         /* 参拝手順 */
@@ -323,7 +321,6 @@
             height: 10vw;
 
             border: 1px solid rgb(92, 92, 92);
-            color: rgb(0, 0, 0);
             font-size: 16px;
 
             display: flex;
@@ -401,7 +398,6 @@
             width: 100vw;
             height: 55vw;
 
-            color: rgb(0, 0, 0);
             background-color: rgba(255, 255, 255);
 
             display: block;
@@ -672,9 +668,9 @@
             margin-left: 5vw;
             margin-bottom: 5vw;
             width: 90vw;
-            height: 90vw;
+            height: 50vw;
 
-            background-size: cover;
+            background-size: contain;
             background-position: top;
             background-repeat: no-repeat;
 
@@ -717,44 +713,324 @@
             color: rgb(255, 255, 255);
             background-color: rgb(53, 0, 0);
         }
+        /* ご祭神 */
+        .DeityItem {
+            position: relative;
+            top: 0;        
+            width: 90vw;
+            height: 10vw;
+            margin-left: 5vw;
+            margin-top: 8vw;
+            margin-bottom: 8vw;
+            padding-top: 3vw;
+
+            text-align: center;
+
+            font-size: 4vw;
+            background-image: url("../Img/DeityItem.png");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        .DeityImage {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 5vw;
+            margin-left: 15vw;
+            margin-bottom: 5vw;
+            width: 70vw;
+            height: 70vw;
+
+            border-radius: 5vw;
+
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+            z-index: 1;
+        }
+        .DeityTab {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 0;
+            width: 100vw;
+
+            list-style-type: none;
+        }
+        .DeityTab li {
+            position: relative;
+            width: 70vw;
+            height: 6vw;
+            margin-top: 3vw;
+            margin-left: 15vw;
+            padding-left: 3vw;
+
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            border-left: 5px solid rgb(102, 0, 0);
+            border-bottom: 1px solid rgb(102, 0, 0);
+        }
+        /* ブラインドされたご祭神の名前 */
+        .DeityName-Blind {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 4vw;
+            width: 60vw;
+            height: 8vw;
+            margin-left: 20vw;
+
+            background-color: rgb(0, 0, 0);
+        }
+        .DeityNameEng-Blind {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 2vw;
+            width: 50vw;
+            height: 3vw;
+            margin-left: 25vw;
+
+            background-color: rgb(0, 0, 0);
+        }
+        /* 東御座 */
+        .EastDeity {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-top: 3vw;
+            padding-bottom: 3vw;
+            width: 100vw;
+
+            background-color: rgb(173, 247, 185);
+        }
+        /* 西御座 */
+        .WestDeity {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-top: 3vw;
+            padding-bottom: 3vw;
+            width: 100vw;
+
+            background-color: rgb(160, 253, 222);
+        }
+
+        /* ご祭神のリスト */
+        .DeityList {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            padding-top: 3vw;
+            padding-bottom: 3vw;
+            margin-top: 10vw;
+            margin-bottom: 20vw;
+            margin-left: 5vw;
+            width: 90vw;
+
+            background-color: rgb(255, 255, 255);
+
+            list-style-type: none;
+        }
+        .DeityList li {
+            position: relative;
+            width: 60vw;
+            margin-top: 5vw;
+            margin-bottom: 5vw;
+            margin-left: 15vw;
+        }
+        
+        /* ご祭神の名前 */
+        .DeityClass {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            width: 60vw;
+
+            text-align: center;
+        }
+        .DeityName {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            margin-top: 3vw;
+            margin-bottom: 1vw;
+            width: 60vw;
+
+            text-align: center;
+            font-size: 22px;
+        }
+        .DeityNameEng {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-left: 0;
+            width: 60vw;
+
+            text-align: center;
+            font-size: 14px;
+            color: rgb(156, 156, 156);
+        }
 
         /* ここから先ログイン画面専用 */
         /* ログインフォーム */
-        #loginForm {
+        #PrayForm {
             position: relative;
-            margin-top: 5vw;
+            margin-top: 15vw;
+            margin-bottom: 20vw;
             width: 100vw;
-            height: 50vw;
+            height: 60vw;
+
+            background-color: rgba(0, 150, 100, 0.1);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* 黒っぽい影 */
+        }
+        label{
+            position: relative;
+            margin-left: 15vw;
+            width: 70vw;
+            height: 7vw;
+
+            color: rgb(30, 100, 94);
+            font-size: 16px;
+        }
+        select {
+            position: relative;
+            margin-top: 2vw;
+            margin-left: 15vw;
+            width: 70vw;
+            height: 7vw;
 
             background-color: rgba(255, 255, 255);
-            border: 1px solid rgb(0, 0, 0);
-            border-radius: 5px;
+            border: 1px solid rgb(116, 116, 116);
+            color: rgb(0, 0, 0);
+            font-size: 16px;
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            cursor: pointer;
+        }
+        option {
+            color: rgb(0, 0, 0);
         }
         input { /* インプットフォーム */
             position: relative;
             margin-top: 2vw;
+            margin-left: 15vw;
             width: 70vw;
-            height: 5vw;
+            height: 7vw;
 
             background-color: rgba(255, 255, 255);
             border: 1px solid rgb(116, 116, 116);
+            color: rgb(0, 0, 0);
+            font-size: 16px;
 
             cursor: pointer;
         }
         button {
             position: relative;
             margin-top: 2vw;
-            width: 17vw;
+            margin-left: 15vw;
+            width: 70vw;
             height: 7vw;
 
-            color: rgb(255, 255, 255);
-            background-color: rgb(54, 0, 0);
+            background-color: rgb(40, 170, 120);
+            border: 1px solid rgb(116, 116, 116);
             border-radius: 5px;
+            font-size: 16px;
 
+            cursor: pointer;
+
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(2, 73, 46);
+            color: rgb(255, 255, 255);
+        }
+        #NormalActionText {
+            position: fixed;
+            top: 90vw;
+            left: 15vw;
+            margin-top: 5vw;
+            width: 70vw;
+            height: 25vw;
+
+            background-color: rgb(255, 255, 255, 0.9);
+            border-radius: 15px;
+            font-size: 18px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* 黒っぽい影 */
+
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+
+            z-index: 4000;
+            overflow: hidden;
+        }
+        #LINEMessage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: -20vw;
+            margin-left: 3vw;
+            width: 94vw;
+            height: 15vw;
+
+            background-image: url("../Img/LIMEMessage.jpg");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+            font-size: 18px;
+
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* 黒っぽい影 */
+
+            transition: margin-top 0.3s ease;
+
+            z-index: 4000;
+            overflow: hidden;
+        }
+        .MessageDeity {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 1vw;
+            margin-left: 18vw;
+            height: 4vw;
+
+            font-size: 2.8vw;
+            color: rgb(0, 0, 0);
+
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .MessageText {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 1vw;
+            margin-left: 19vw;
+
+            font-size: 2.5vw;
+            color: rgb(0, 0, 0);
+        }
+
+        /* 五行封印の鍵 */
+        #FIVE {
             cursor: pointer;
         }
 
@@ -950,7 +1226,6 @@
             height: auto;
 
             font-size: 12px;
-            color: rgb(0, 0, 0);
             background-color: rgba(255, 255, 255, 0);
         }
         /* サブリンク */
