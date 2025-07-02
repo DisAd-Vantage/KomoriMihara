@@ -457,80 +457,30 @@
         /* 〇〇についてタブ */
         .AboutTub {
             position: relative;
-            margin-left: 5vw;
-            margin-top: 10vw;
-            width: 90vw;
-            height: 120vw;
+            width: 100vw;
+            height: 140vw;
 
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* 黒っぽい影 */
+            background-image: url("../Img/About.png");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
 
             overflow: hidden;
             display: block;
-        }
-        .AboutThumbnail {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 90vw;
-            height: 60vw;
-
-            object-fit: cover;
-            object-position: 50% 50%;
-            z-index: 1;
-        }
-        .Aboutabstract {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 90vw;
-            height: 60vw;
-
-            display: block;
-            font-size: 2vw;
-
-            z-index: 2;
         }
         .AboutTitle {
             position: relative;
             top: 0;
             left: 0;
-            padding-top: 0;
-            padding-left: 3vw;
-            width: 90vw;
-            height: 25vw;
-
-            color: rgb(0, 0, 0);
+            margin-top: 10vw;
+            margin-bottom: 60vw;
+            width: 60vw;
+            height: 40vw;
 
             display: flex;
             justify-content: left; /* 横方向の中央 */
             align-items: center;
             font-size: 4vw;
-
-            z-index: 2;
-        }
-        .AboutLinkLogo_1 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin-top: 8vw;
-            margin-right: 8vw;
-            width: 9vw;
-            height: 9vw;
-            
-            z-index: 2;
-        }
-        .AboutabstractText {
-            position: relative;
-            top: 0;
-            right: 0;
-            margin-left: 3vw;
-            width: 70vw;
-            height: 15vw;
-
-            color: rgb(0, 0, 0, 0.7);
-            text-align: left;
-            font-size: 2.5vw;
-            border-bottom: 1px solid rgb(0, 0, 0);
 
             z-index: 2;
         }
@@ -541,7 +491,7 @@
             margin-top: 2vw;
             margin-left: 3vw;
             padding-left: 3vw;
-            width: 40vw;
+            width: 45vw;
             height: 7vw;
 
             font-size: 3vw;
@@ -558,14 +508,13 @@
         /* お社・ご祭神タブ */
         .GodTub {
             position: relative;
-            margin-top: 10vw;
             width: 100vw;
             height: 120vw;
 
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* 黒っぽい影 */
+            background-color: rgb(255, 255, 255);
             overflow: hidden;
             display: flex;
-
-            border-bottom: 1px solid rgb(104, 104, 104);
         }
         .GodThumbnail {
             position: relative;
@@ -798,12 +747,12 @@
             top: 0;
             right: 0;
             margin-left: 3vw;
-            width: 60vw;
+            width: 65vw;
             height: 10vw;
 
             color: rgb(255, 255, 255, 0.7);
             text-align: left;
-            font-size: 12px;
+            font-size: 2.5vw;
             border-bottom: 1px solid rgb(255, 255, 255, 0.7);
 
             z-index: 2;
@@ -866,82 +815,22 @@
         /* ご参拝ご祈祷タブ */
         .VisitTub {
             position: relative;
-            margin-left: 5vw;
             margin-top: 10vw;
-            width: 90vw;
-            height: 100vw;
+            width: 100vw;
+            height: 70vw;
 
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* 黒っぽい影 */
-
-            overflow: hidden;
+            /* overflow: hidden; */
             display: block;
         }
         .VisitThumbnail {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 90vw;
-            height: 60vw;
-
-            object-fit: cover;
-            object-position: 50% 50%;
-            z-index: 1;
-        }
-        .Visitabstract {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 90vw;
-            height: 40vw;
-
-            display: block;
-            font-size: 2vw;
-
-            z-index: 2;
-        }
-        .VisitTitle {
-            position: relative;
-            top: 0;
-            left: 0;
-            padding-top: 0;
-            padding-left: 3vw;
-            width: 90vw;
-            height: 20vw;
-
-            color: rgb(0, 0, 0);
-
-            display: flex;
-            justify-content: left; /* 横方向の中央 */
-            align-items: center;
-            font-size: 4vw;
-
-            z-index: 2;
-        }
-        .VisitLinkLogo_1 {
             position: absolute;
             top: 0;
-            right: 0;
-            margin-top: 5vw;
-            margin-right: 8vw;
-            width: 9vw;
-            height: 9vw;
-            
-            z-index: 2;
-        }
-        .VisitabstractText {
-            position: relative;
-            top: 0;
-            right: 0;
-            margin-left: 3vw;
-            width: 60vw;
-            height: 15vw;
+            left: 0;
+            width: 100vw;
+            height: 70vw;
 
-            color: rgb(0, 0, 0, 0.7);
-            text-align: left;
-            font-size: 12px;
-            border-bottom: 1px solid rgb(0, 0, 0);
-
-            z-index: 2;
+            object-fit: cover;
+            z-index: 1;
         }
 
         /* 〇〇についてタブ */
@@ -951,7 +840,7 @@
             width: 100vw;
             height: 130vw;
 
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* 黒っぽい影 */
+            box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5); /* 黒っぽい影 */
             background-image: url("../Img/ShrineMap.png");
             background-size: cover;
             background-position: top;
@@ -2051,17 +1940,4 @@
 
             border-bottom: 1px dashed rgb(0, 0, 0);
             pointer-events: none;
-        }
-
-        /* 以降は */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(10vw);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-            will-change: opacity, transform;
-        }
-
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
