@@ -316,19 +316,27 @@
             width: 60vw;
             height: 10vw;
 
-            border: 1px solid rgb(92, 92, 92);
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 5vw;
+            color: rgb(0, 0, 0);
             font-size: 16px;
 
             display: flex;
             justify-content: center; /* 横方向の中央 */
             align-items: center;
 
-            background-image: url("../Img/ToPrayBackground.png");
-            background-size: cover;
-            background-position: top;
+            background-image: url("../Img/LinkLogo_1.png");
+            background-size: contain;
+            background-position: right;
             background-repeat: no-repeat;
 
+            transition: border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
             z-index: 10;
+        }
+        .ToPray:hover {
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
         }
 
         /* ニュース */
@@ -452,7 +460,7 @@
             margin-left: 5vw;
             margin-top: 10vw;
             width: 90vw;
-            height: 130vw;
+            height: 120vw;
 
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* 黒っぽい影 */
 
@@ -475,7 +483,7 @@
             top: 0;
             left: 0;
             width: 90vw;
-            height: 70vw;
+            height: 60vw;
 
             display: block;
             font-size: 2vw;
@@ -516,12 +524,12 @@
             top: 0;
             right: 0;
             margin-left: 3vw;
-            width: 60vw;
+            width: 70vw;
             height: 15vw;
 
             color: rgb(0, 0, 0, 0.7);
             text-align: left;
-            font-size: 12px;
+            font-size: 2.5vw;
             border-bottom: 1px solid rgb(0, 0, 0);
 
             z-index: 2;
@@ -550,18 +558,20 @@
         /* お社・ご祭神タブ */
         .GodTub {
             position: relative;
-            margin-left: 5vw;
             margin-top: 10vw;
-            width: 90vw;
+            width: 100vw;
             height: 120vw;
 
             overflow: hidden;
             display: flex;
+
+            border-bottom: 1px solid rgb(104, 104, 104);
         }
         .GodThumbnail {
             position: relative;
             top: 0;
             left: 0;
+            margin-left: 5vw;
             width: 30vw;
             height: 80vw;
 
@@ -630,10 +640,10 @@
             top: 0;
             left: 0;
             margin-top: 1vw;
-            margin-left: 13vw;
+            margin-left: 3vw;
             padding-left: 3vw;
             width: 40vw;
-            height: 6vw;
+            height: 5vw;
 
             font-size: 2.5vw;
             border-left: 3px solid rgb(112, 112, 112);
@@ -669,7 +679,7 @@
             padding-top: 0;
             padding-left: 3vw;
             width: 90vw;
-            height: 30vw;
+            height: 20vw;
 
             display: flex;
             justify-content: left; /* 横方向の中央 */
@@ -689,19 +699,43 @@
             left: 0;
             margin-top: 4vw;
             margin-left: 3vw;
-            padding-left: 8vw;
+            padding-left: 2vw;
             width: 50vw;
-            height: 8vw;
+            height: 11vw;
 
-            font-size: 3vw;
-            color: rgb(255, 255, 255);
             border-bottom: 1px solid rgb(255, 255, 255);
 
-            display: flex;
+            display: block;
             justify-content: left; /* 横方向の中央 */
             align-items: center;
 
             z-index: 10;
+        }
+        .LatestNewsLabel {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-top: 1vw;
+            width: 14vw;
+            height: 5vw;
+
+            text-align: center;
+            font-size: 2vw;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+        }
+        .LatestNewsContent {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 1vw;
+            margin-left: 5vw;
+            width: 45vw;
+            height: 8vw;
+
+            text-align: left;
+            font-size: 3vw;
+            color: rgb(255, 255, 255);
         }
 
         /* 主な神事行事タブ */
@@ -709,7 +743,7 @@
             position: relative;
             margin-top: 10vw;
             width: 100vw;
-            height: 120vw;
+            height: 125vw;
 
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* 黒っぽい影 */
             background-color: rgb(78, 78, 78);
@@ -721,6 +755,7 @@
             position: relative;
             top: 0;
             left: 0;
+            margin-top: 5vw;
             width: 100vw;
             height: 120vw;
 
@@ -924,6 +959,11 @@
 
             overflow: hidden;
             display: block;
+        }
+        .MapText {
+            position: absolute;
+            width: 100vw;
+            height: 130vw;
         }
         .Mapabstract {
             position: relative;
@@ -1829,7 +1869,6 @@
             background-position: top;
             background-repeat: no-repeat;
         }
-
         /* 注意書き */
         .Note {
             position: relative;
@@ -1847,7 +1886,6 @@
             border-top: 3px solid rgb(255, 255, 255);
             background-color: rgb(37, 0, 0);
         }
-
         /* コピーライトの表記 */
         .CopyRight {
             position: relative;
@@ -1874,20 +1912,22 @@
             margin-top: -13vw;
             margin-left: 88vw;
 
-            background-color: rgb(0, 0, 0, 0.7);
-
             cursor: pointer;
 
+            transition: background-color 0.3s ease-out;
             z-index: 3000;
         }
         /* メニュータブ閉じている */
+        .MenubtnOFF {
+            background-color: rgb(0, 0, 0, 0);
+        }
         .MenubtnOFF span {
             position: absolute;
             display: inline-block;
             width: 8vw;
             height: 0.5vw;
 
-            background-color: rgba(255, 255, 255);
+            background-color: rgb(0, 0, 0);
             top: 4.5vw;
             left: 1vw;
         }
@@ -1898,7 +1938,7 @@
             width: 8vw;
             height: 0.5vw;
 
-            background-color: rgba(255, 255, 255);
+            background-color: rgb(0, 0, 0);
             transition: transform 0.3s ease-out;
         }
         .MenubtnOFF span::before {
@@ -1909,6 +1949,9 @@
         }
 
         /* メニュータブ開いている */
+        .MenubtnON {
+            background-color: rgb(0, 0, 0, 0.7);
+        }
         .MenubtnON span {
             position: absolute;
             display: inline-block;
@@ -1946,7 +1989,7 @@
             padding-top: 19vw;
             height: 100vh;
 
-            background-color: rgba(255, 255, 255, 0.9);  
+            background-color: rgba(233, 233, 233, 0.9);  
             z-index: 2000;
 
             overflow: hidden;
@@ -1987,9 +2030,10 @@
             position: relative;
             width: 100vw;
             height: 10vw;
+            padding-left: 15vw;
 
             display: flex;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
         }
         .MenuTab li::after {
@@ -2007,4 +2051,17 @@
 
             border-bottom: 1px dashed rgb(0, 0, 0);
             pointer-events: none;
+        }
+
+        /* 以降は */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(10vw);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }

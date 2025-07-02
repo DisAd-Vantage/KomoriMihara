@@ -1,4 +1,6 @@
-// メニューボタンを押すscript
+// 汎用スクリプト置き場
+
+//  メニューボタンを押すscript
 // 一つ目はメニュータブを押すとメニューが開く。
 const Menubtn = document.getElementById('Menubtn');
 const MenuTabBar = document.getElementById('MenuTabBar');
@@ -22,3 +24,22 @@ function toggleMenu(Menubtn, MenuTabBar) {
         MenuTabBar.classList.add('MenuTabBarOFF');         
     }
 }
+
+// スクロールしたら表示させるscript
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    root: null,          // ビューポートを基準
+    rootMargin: '0px 0px -150px 0px',
+    threshold: 0         // 交わり始めた瞬間に
+});
+
+
+document.querySelectorAll('.fade-in-section').forEach(section => {
+    observer.observe(section);
+});
